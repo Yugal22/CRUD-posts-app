@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>All posts</h1>
-<a href="http://localhost:3000/posts/new">create new post </a>
+<a href="/posts/new">create new post </a>
 <br>
 <br>
     
@@ -18,8 +18,8 @@
      <h3 class="user">@<%= post.username %></h3>
      <h4><%= post.content %></h4>
      
-     <a href="http://localhost:3000/posts/<%=post.id%>">See in detail</a>
-     <a href="http://localhost:3000/posts/<%=post.id%>/edit">Edit</a>
+     <a href="/posts/<%=post.id%>">See in detail</a>
+     <a href="/posts/<%=post.id%>/edit">Edit</a>
      <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
          <button>Delete</button>
      </form>
