@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-const port = 3000;
+const port =  process.env.PORT|| 3000;
 
 const path = require("path");
 const methodOverride = require("method-override");
@@ -34,6 +34,9 @@ let posts = [{
     username :"Saksham",
     content :"I am going to picnic"
 }];
+app.get("/", (req, res) => {
+    res.redirect("/posts");
+});
 app.get("/posts",(req,res) =>{
     res.render("index.ejs",{posts});
 })
